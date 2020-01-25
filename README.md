@@ -21,3 +21,22 @@ const url = 'https://api.darksky.net/forecast/a78d6a897s5da8s75das/'+ encodeURIC
 const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'+ encodeURIComponent(address) +'.json?access_token=pk.da9s6da76a89s.da768d6a869&limit=1'
 ```
 (Los tokens usados no son reales)
+
+## Despliegue 📦
+
+Puedes desplegar la aplicación utilizando Docker. Para ello primero construye la imagen ejecutando el siguiente comando en la carpeta donde se encuentra el fichero Dockerfile, una vez descargas el repositorio:
+
+```
+docker build -t weather_app .
+```
+Y después levantamos el contenedor, ejecutando el comando "npm run app":
+
+```
+docker run -dti --name weather-app -p 3000:3000 weather npm run app
+```
+
+Si accedemos en nuestro navegador a la siguiente URL podremos ver la aplicación en ejecución:
+
+```
+localhost:3000
+```
